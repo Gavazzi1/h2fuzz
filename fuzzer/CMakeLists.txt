@@ -1,0 +1,18 @@
+cmake_minimum_required(VERSION 3.5)
+project(nezha)
+
+set(CMAKE_CXX_STANDARD 14)
+set (CMAKE_CXX_COMPILER "clang++-3.8")
+set (CMAKE_CXX_FLAGS "-g -fsanitize=address -fsanitize-recover=address,undefined,integer -fsanitize-coverage=edge,indirect-calls,8bit-counters")
+
+include_directories($ENV{GTESTDIR}/include)
+link_directories($ENV{GTESTDIR}/lib)
+include_directories($ENV{SSDIR}/include)
+link_directories($ENV{SSDIR}/lib)
+include_directories($ENV{LCONFDIR}/include)
+link_directories($ENV{LCONFDIR}/lib)
+include_directories(/builds/libs/ssdeep-lib/include)
+link_directories(/builds/libs/ssdeep-lib/lib)
+add_subdirectory(nezha-0.1)
+add_subdirectory(h2_serializer)
+add_subdirectory(h2_fuzz)

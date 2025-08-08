@@ -1,0 +1,12 @@
+filter: {
+    in_host = "localhost";
+    out_authority = "localhost";
+    ignore_headers = ("x-uri",
+                      "x-method",
+                      "x-host",
+                      "accept-encoding",
+                      "x-varnish",
+                      "scheme",
+                      "x-forwarded-for",
+                      "via");
+}

@@ -1,0 +1,5 @@
+filter: {
+    in_host = "localhost";
+    out_authority = "localhost";
+    ignore_headers = ("x-forwarded-for", "x-forwarded-host", "x-forwarded-server", "connection");
+}

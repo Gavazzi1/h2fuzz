@@ -1,0 +1,12 @@
+filter: {
+    in_host = "localhost";
+    out_authority = "localhost";
+    ignore_headers = ("x-forwarded-host",
+                      "x-forwarded-server",
+                      "accept-encoding",
+                      "x-real-ip",
+                      "x-forwarded-proto",
+                      "x-forwarded-port",
+                      "x-forwarded-for",
+                      "x-script-name");
+}

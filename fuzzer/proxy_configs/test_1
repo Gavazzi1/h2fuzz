@@ -1,0 +1,5 @@
+filter: {
+    in_host = "HOST_VAL";
+    out_authority = "AUTHORITY_VAL";
+    ignore_headers = ();
+}

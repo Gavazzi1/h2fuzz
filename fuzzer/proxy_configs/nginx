@@ -1,0 +1,5 @@
+filter: {
+    in_host = "127.0.0.1:8080";
+    out_authority = "localhost";
+    ignore_headers = ("connection");
+}

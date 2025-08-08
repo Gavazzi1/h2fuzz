@@ -1,0 +1,10 @@
+filter: {
+    in_host = "h2fuzz.website";
+    out_authority = "d2plqgx06492db.cloudfront.net";
+    ignore_headers = ("user-agent",
+                      "x-amz-cf-id",
+                      "via",
+                      "x-forwarded-for",
+                      "connection",
+                      "x-edge-internal-http-guardian-flagged");
+}

@@ -1,0 +1,15 @@
+http:
+  routers:
+    sslmainrouter:
+      rule: "Host(`localhost`)"
+      service: mainservice
+      entryPoints:
+        - "websecure"
+      tls:
+          {}
+
+  services:
+    mainservice:
+      loadBalancer:
+        servers:
+        - url: http://127.0.0.1:8080/

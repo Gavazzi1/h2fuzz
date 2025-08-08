@@ -1,0 +1,13 @@
+filter: {
+    in_host = "cloudflare.h2fuzz.website";
+    out_authority = "cloudflare.h2fuzz.website";
+    ignore_headers = ("cf-visitor",
+                      "cf-connecting-ip",
+                      "accept-encoding",
+                      "cdn-loop",
+                      "x-forwarded-proto",
+                      "cf-ipcountry",
+                      "x-forwarded-for",
+                      "cf-ray",
+                      "connection");
+}

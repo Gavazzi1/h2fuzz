@@ -1,0 +1,15 @@
+filter: {
+    in_host = "h2fuzz.website";
+    out_authority = "akamai.h2fuzz.website";
+    ignore_headers = ("accept-encoding",
+                      "x-akamai-sr-hop",
+                      "te",
+                      "cache-control",
+                      "true-client-ip",
+                      "x-forwarded-for",
+                      "pragma",
+                      "via",
+                      "x-akamai-config-log-detail",
+                      "akamai-origin-hop",
+                      "connection");
+}

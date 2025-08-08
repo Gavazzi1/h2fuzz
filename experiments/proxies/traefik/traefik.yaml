@@ -1,0 +1,12 @@
+entrypoints:
+  websecure:
+    address: ":443"
+
+providers:
+  file:
+    directory: /etc/confs
+
+log:
+  filePath: "/etc/log-file.log"
+  format: json
+  level: DEBUG

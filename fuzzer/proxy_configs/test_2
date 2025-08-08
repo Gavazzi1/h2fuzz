@@ -1,0 +1,5 @@
+filter: {
+    in_host = "INCOMING_HOST";
+    out_authority = "OUTGOING_AUTH";
+    ignore_headers = ("hdr_name_1", "Hdr_Name_2", "HDR_NAME_3");
+}

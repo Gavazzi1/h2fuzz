@@ -1,0 +1,15 @@
+filter: {
+    in_host = "h2fuzz.website";
+    out_authority = "h2fuzz.azureedge.net";
+    ignore_headers = ("Range",
+                      "x-fd-int-roxy-expectedpurgeid",
+                      "X-Forwarded-For",
+                      "X-Azure-FDID",
+                      "Via",
+                      "X-Forwarded-Host",
+                      "X-Forwarded-Proto",
+                      "x-azure-ref",
+                      "x-azure-clientip",
+                      "x-azure-socketip",
+                      "x-azure-requestchainv2");
+}

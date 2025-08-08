@@ -1,0 +1,30 @@
+mutable_fields: {
+  data = (("flags", "base"), ("reserved", "base"), ("streamid", "base"),
+          ("padflag", "pad"), ("length", "pad"), ("padding", "pad"),
+          ("data", "data"));
+  headers = ();
+  priority = ();
+  rst_stream = ();
+  settings = ();
+  push_prom = ();
+  ping = ();
+  goaway = ();
+  win_update = ();
+  continuation = ();
+};
+
+likelihoods: {
+  mutate_hdr_settings = 75;
+
+  mutate_operators: {
+    bit = 75;
+    delete = 5;
+    dup = 10;
+    swap = 10;
+  }
+
+  crossover_operators: {
+    add = 50;
+    splice = 50;
+  }
+}

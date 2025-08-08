@@ -1,0 +1,13 @@
+filter: {
+    in_host = "h2fuzz.global.ssl.fastly.net";
+    out_authority = "h2fuzz.freetls.fastly.net";
+    ignore_headers = ("x-timer",
+                      "x-forwarded-host",
+                      "x-forwarded-server",
+                      "fastly-client-ip",
+                      "cdn-loop",
+                      "x-varnish",
+                      "fastly-ssl",
+                      "fastly-ff",
+                      "x-forwarded-for");
+}

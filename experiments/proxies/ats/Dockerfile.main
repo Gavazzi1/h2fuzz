@@ -1,0 +1,22 @@
+FROM ubuntu:22.04
+RUN apt update -y
+
+RUN apt install vim curl less net-tools netcat python3 -y
+
+RUN export DEBIAN_FRONTEND=noninteractive
+RUN truncate -s0 /tmp/preseed.cfg; \
+    echo "tzdata tzdata/Areas select Europe" >> /tmp/preseed.cfg; \
+    echo "tzdata tzdata/Zones/Europe select Berlin" >> /tmp/preseed.cfg; \
+    debconf-set-selections /tmp/preseed.cfg && \
+    rm -f /etc/timezone /etc/localtime && \
+    apt install -y tzdata
+
+RUN apt install -y autoconf automake libtool pkg-config libmodule-install-perl gcc libssl-dev libpcre3-dev libcap-dev libhwloc-dev libncurses5-dev libcurl4-openssl-dev flex g++ tk-dev tcl-dev make
+
+RUN curl -O https://downloads.apache.org/trafficserver/trafficserver-9.2.1.tar.bz2
+RUN tar xf trafficserver-9.2.1.tar.bz2
+RUN cd trafficserver-9.2.1 && ./configure && make -j8 && make install
+
+RUN export LD_LIBRARY_PATH=/usr/local/lib/
+
+ENTRYPOINT tail -f /dev/null
