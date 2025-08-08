@@ -3,7 +3,6 @@ FROM varnish:7.5.0
 USER root
 RUN apt-get update
 RUN apt-get install vim python3 procps python3-pip hitch python3-scapy -y
-#RUN pip3 install scapy
 
 COPY echo-server.py /echo-server.py
 COPY h2proxy.py /h2proxy.py

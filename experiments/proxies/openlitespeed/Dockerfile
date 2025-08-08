@@ -3,7 +3,7 @@ FROM ubuntu:22.04
 RUN apt-get update && apt-get install -y python3 vim curl wget systemctl net-tools python3-pip
 RUN pip3 install scapy==2.5.0
 RUN wget -O - https://repo.litespeed.sh | bash
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y openlitespeed
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y openlitespeed=1.7.19-5+jammy
 
 COPY host.cert /host.cert
 COPY host.key  /host.key
