@@ -81,7 +81,7 @@ def tls_setup_exchange(dn, port, use_insecure_ciphers=False):
     if hasattr(socket, 'SO_REUSEPORT'):
         s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
 
-    ip_and_port = addr_info[0][4]
+    ip_and_port = chosen_set[4]
 
     ssl_ctx = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
     ssl_ctx.check_hostname = False
