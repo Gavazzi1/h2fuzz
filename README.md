@@ -1,3 +1,3 @@
-# HTTP/2 Fuzzer
+# H2Fuzz
 
-This is the main repo for a structure-aware, guided differential HTTP/2 fuzzer, designed to detect HTTP/2-to-HTTP/1 conversion anomalies.
+This is the main repo for the tool presented in our RAID 2025 paper, H2Fuzz: Guided, Black-box, Differential Fuzzing for HTTP/2-to-HTTP/1 Conversion Anomalies.
