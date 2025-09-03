@@ -10,9 +10,9 @@ RUN apt-get update \
       gcc \
       g++ \
       gdb \
+      git \
       clang-3.8 \
       clang \
-      git \
       vim \
       make \
       ninja-build \
@@ -20,20 +20,21 @@ RUN apt-get update \
       autoconf \
       automake \
       locales-all \
-      dos2unix \
       rsync \
       tar \
       python \
       libssl-dev \
-      valgrind \
       libgtest-dev \
       libconfig++-dev \
   && apt-get clean
 
 # build and install ssdeep for fuzzy hashing
-COPY build_ssdeep.sh /build_ssdeep.sh
-RUN chmod +x /build_ssdeep.sh
-RUN ./build_ssdeep.sh
+RUN git clone https://github.com/DinoTools/python-ssdeep.git
+WORKDIR python-ssdeep
+RUN git checkout 9ca00aa37f1ca4c2dcb12978ef61fa8d12186ca7
+WORKDIR ssdeep-lib/
+RUN ./configure --prefix=`pwd`/../../../../builds/libs/ssdeep-lib CC=clang CXX=clang++ && \
+    make && make install
 
 # build and install google test
 WORKDIR /usr/src/gtest
