@@ -19,7 +19,7 @@ void callback_helper(const char *prox, const char *addr, int port, const uint8_t
 #define CLEAN(tname) tname.join();
 
 int main(int argc, char** argv) {
-    HashComp* ret_vals[16];
+    HashComp* ret_vals[11];
     uint8_t Data[4096];
     uint32_t Size;
 
@@ -55,13 +55,8 @@ int main(int argc, char** argv) {
     LAUNCH(t_varnish, "varnish", "172.17.0.9", 6)
     LAUNCH(t_h2o, "h2o", "172.17.0.10", 7)
     LAUNCH(t_ats, "ats", "172.17.0.11", 8)
-    LAUNCH(t_akamai, "akamai", "172.17.0.12", 9)
-    LAUNCH(t_cloudflare, "cloudflare", "172.17.0.13", 10)
-    LAUNCH(t_cloudfront, "cloudfront", "172.17.0.14", 11)
-    LAUNCH(t_fastly, "fastly", "172.17.0.15", 12)
-    LAUNCH(t_nghttp2, "nghttp2", "172.17.0.16", 13)
-    LAUNCH(t_ols, "openlitespeed", "172.17.0.17", 14)
-    LAUNCH(t_azure, "azure", "172.17.0.18", 15)
+    LAUNCH(t_nghttp2, "nghttp2", "172.17.0.12", 9)
+    LAUNCH(t_ols, "openlitespeed", "172.17.0.13", 10)
 
     CLEAN(t_nginx)
     CLEAN(t_caddy)
@@ -72,17 +67,11 @@ int main(int argc, char** argv) {
     CLEAN(t_varnish)
     CLEAN(t_h2o)
     CLEAN(t_ats)
-    CLEAN(t_akamai)
-    CLEAN(t_cloudflare)
-    CLEAN(t_cloudfront)
-    CLEAN(t_fastly)
     CLEAN(t_nghttp2)
     CLEAN(t_ols)
-    CLEAN(t_azure)
 
     std::vector<std::string> proxies = {"nginx", "caddy", "apache", "envoy", "haproxy", "traefik", "varnish",
-                                        "h2o", "ats", "akamai", "cloudflare", "cloudfront", "fastly",
-                                        "nghttp2", "openlitespeed", "azure"};
+                                        "h2o", "ats", "nghttp2", "openlitespeed"};
     bool all_good = true;
     for (int i = 0; i < proxies.size(); ++i) {
         if (ret_vals[i] == nullptr) {

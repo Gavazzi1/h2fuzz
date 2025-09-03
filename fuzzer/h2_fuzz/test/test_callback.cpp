@@ -81,13 +81,6 @@ TEST(TestCallbacks, OverwriteSpecialHost_As_SubString) {
 }
 
 TEST(TestCallbacks, OverwriteAuthority_AllowedWhenBeyondMaxSize) {
-    /*
-     * akamai.h2fuzz.website
-     * cloudflare.h2fuzz.website
-     * d2plqgx06492db.cloudfront.net
-     * h2fuzz.azureedge.net
-     * h2fuzz.freetls.fastly.net
-     */
     ProxyConfig filt;
     filt.authority = "d2plqgx06492db.cloudfront.net";  // longest one in our actual dataset
 

@@ -25,7 +25,7 @@ void callback_helper(const char *prox, const char *addr, int port, const uint8_t
 #define CLEAN(tname) tname.join();
 
 int main(int argc, char **argv) {
-    HashComp *ret_vals[16];
+    HashComp *ret_vals[11];
     for (auto & ret_val : ret_vals) {
         ret_val = nullptr;
     }
@@ -50,13 +50,8 @@ int main(int argc, char **argv) {
             {"varnish",       "172.17.0.9"},
             {"h2o",           "172.17.0.10"},
             {"ats",           "172.17.0.11"},
-            {"akamai",        "172.17.0.12"},
-            {"cloudflare",    "172.17.0.13"},
-            {"cloudfront",    "172.17.0.14"},
-            {"fastly",        "172.17.0.15"},
-            {"nghttp2",       "172.17.0.16"},
-            {"openlitespeed", "172.17.0.17"},
-            {"azure",         "172.17.0.18"},
+            {"nghttp2",       "172.17.0.12"},
+            {"openlitespeed", "172.17.0.13"},
     };
 
     auto it = ips.find(pname);

@@ -53,7 +53,7 @@ __sanitizer_get_number_of_counters();
 // Let's just increase the number of libs upon includes to append them in-order
 // into the array but this assumes that always the calls will happen in the same
 // order inside the code because otherwise things will break!
-int total_libs = 16;
+int total_libs = 11;
 
 // Current lib we are visiting.
 int cur_lib = 0;
